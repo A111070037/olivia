@@ -19,7 +19,9 @@
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -30,7 +32,6 @@
         headerToggle();
       }
     });
-
   });
 
   /**
@@ -65,13 +66,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -104,58 +107,64 @@
       backDelay: 2000
     });
   }
-/**
+
+  /**
    * Hero Flashlight Effect (手電筒探索效果)
+   * 修正說明：統一使用 .flashlight-target 並確保語法正確
    */
-const heroContainer = document.querySelector('.hero'); // 根據你的 HTML 結構，iPortfolio 預設通常是 .hero
-const flashlightImg = document.querySelector('.hero img'); // 獲取 hero 區塊內的背景圖片
+  const heroSection = document.querySelector('#hero');
+  const heroImg = document.querySelector('.flashlight-target');
 
-if (heroContainer && flashlightImg) {
-  heroContainer.addEventListener('mousemove', (e) => {
-    // 獲取滑鼠相對於 hero 容器的位置
-    const rect = heroContainer.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
+  if (heroSection && heroImg) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    // 將座標傳遞給 CSS 變數
-    flashlightImg.style.setProperty('--x', x + '%');
-    flashlightImg.style.setProperty('--y', y + '%');
-  });
+      heroImg.style.setProperty('--x', x + '%');
+      heroImg.style.setProperty('--y', y + '%');
+    });
 
-  // 當滑鼠離開 hero 區域時，可以讓圖片變回全黑（圓圈移到視窗外）
-  heroContainer.addEventListener('mouseleave', () => {
-    flashlightImg.style.setProperty('--x', '-100%');
-    flashlightImg.style.setProperty('--y', '-100%');
-  });
-}
+    heroSection.addEventListener('mouseleave', () => {
+      heroImg.style.setProperty('--x', '-100%');
+      heroImg.style.setProperty('--y', '-100%');
+    });
+  }
+
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
+    if (typeof Waypoint !== 'undefined') {
+      new Waypoint({
+        element: item,
+        offset: '80%',
+        handler: function(direction) {
+          let progress = item.querySelectorAll('.progress .progress-bar');
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+        }
+      });
+    }
   });
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters
@@ -166,28 +175,31 @@ if (heroContainer && flashlightImg) {
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
+    if (typeof imagesLoaded !== 'undefined') {
+      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+        initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
+        });
       });
-    });
+    }
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+        if (initIsotope) {
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+        }
         if (typeof aosInit === 'function') {
           aosInit();
         }
       }, false);
     });
-
   });
 
   /**
@@ -198,19 +210,15 @@ if (heroContainer && flashlightImg) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
+      if (typeof Swiper !== 'undefined') {
         new Swiper(swiperElement, config);
       }
     });
   }
-
   window.addEventListener("load", initSwiper);
 
   /**
-   * Correct scrolling position upon page load for URLs containing hash links.
+   * Correct scrolling position upon page load
    */
   window.addEventListener('load', function(e) {
     if (window.location.hash) {
@@ -244,32 +252,9 @@ if (heroContainer && flashlightImg) {
       } else {
         navmenulink.classList.remove('active');
       }
-    })
+    });
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-/**
-   * Hero Flashlight Effect
-   */
-const heroSection = document.querySelector('#hero');
-const heroImg = document.querySelector('.flashlight-target');
 
-if (heroSection && heroImg) {
-  heroSection.addEventListener('mousemove', (e) => {
-    // 計算滑鼠在 Hero 區塊內的相對座標百分比
-    const rect = heroSection.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-    // 更新 CSS 變數
-    heroImg.style.setProperty('--x', x + '%');
-    heroImg.style.setProperty('--y', y + '%');
-  });
-
-  // 滑鼠離開時讓照片恢復隱藏 (圓圈移到看不到的地方)
-  heroSection.addEventListener('mouseleave', () => {
-    heroImg.style.setProperty('--x', '-100%');
-    heroImg.style.setProperty('--y', '-100%');
-  });
-}
 })();
