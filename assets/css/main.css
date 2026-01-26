@@ -1462,3 +1462,86 @@ section,
 .hero.dark-background {
   background-color: #000 !important; /* 確保背景是純黑，手電筒才明顯 */
 }
+/* --- 實體立體檔案夾樣式 (黑色標籤版) --- */
+
+.folder-card {
+  position: relative;
+  padding-top: 30px; /* 標籤預留高度 */
+  margin-bottom: 20px;
+  perspective: 1000px;
+}
+
+/* 黑色標籤頁 */
+.folder-tab {
+  width: 100px;
+  height: 30px;
+  background: #000000;
+  position: absolute;
+  top: 5px; /* 往下沉一點點，更有包入感 */
+  left: 15px;
+  border-radius: 10px 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* 在背板前方，但在內容後方 */
+}
+
+.folder-tab span {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* 後背板 (外層包覆層) */
+.folder-back {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  background: #000000; /* 淺灰色背板增加層次 */
+  border: 1px solid #000000;
+  border-radius: 0 10px 10px 10px;
+  z-index: 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 檔案主體 (前蓋板) */
+.portfolio-content {
+  position: relative;
+  z-index: 2; /* 最上層 */
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px 10px 10px 10px;
+  margin: 6px; /* 縮排露出背板，產生「裝在裡面」的感覺 */
+  overflow: hidden;
+  box-shadow: -2px 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 頂部黑色細條 (呼應標籤) */
+.portfolio-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000000;
+  z-index: 3;
+}
+
+/* 懸停動畫：檔案抽起感 */
+.folder-card:hover .portfolio-content {
+  transform: translateY(-12px) rotateX(4deg);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.18);
+}
+
+/* 標籤文字顏色統一黑色背景 */
+.filter-app .folder-tab, 
+.filter-product .folder-tab, 
+.filter-branding .folder-tab, 
+.filter-books .folder-tab {
+  background: #000000 !important;
+}
