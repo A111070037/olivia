@@ -109,68 +109,62 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-4 align-items-start justify-content-center">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
+          <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center">
+            <div class="portfolio-details-slider swiper init-swiper" style="width: 100%; max-width: 320px; margin: 0;">
+              
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
+                  "autoplay": { "delay": 5000 },
                   "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
+                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
                 }
               </script>
-
+        
               <div class="swiper-wrapper align-items-center">
-
                 <div class="swiper-slide text-center">
-                  <div style="
-                    max-width: 200px; 
-                    margin: 0 auto; 
-                    overflow: hidden; 
-                    border-radius: 15px; /* 保留一點點圓角讓視覺更精緻，若要直角可改為 0 */
-                    background: #fff;
-                  ">
-                    <video autoplay loop muted playsinline style="width: 100%; display: block;">
-                      <source src="assets/video/your-video.mp4" type="video/mp4">
+                  <div style="overflow: hidden; border-radius: 10px; background: #000;">
+                    <video autoplay loop muted playsinline style="width: 100%; display: block; transform: scale(1.02); object-fit: cover;">
+                      <source src="assets/video/黑色星期五.mp4" type="video/mp4">
                       您的瀏覽器不支援影片播放。
                     </video>
                   </div>
                 </div>
-              
-              </div>
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+        
+          <div class="col-lg-7">
+    
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="200" style="padding: 0 30px 20px 30px;">
+            </br>
+          </br>
+        </br>
+              <h2 style="font-weight: 700; margin-bottom: 15px;">作品標題寫在這裡</h2>
+              <p style="line-height: 1.8; color: #444;">
+                這裡可以填寫你的設計理念。例如：這是一個針對聖誕節活動設計的導購頁面，強調紅黑金的節慶視覺感，並優化了手機端的閱讀體驗。
               </p>
             </div>
+        
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="300" style="padding: 20px 30px; background: #f8f9fa; border-radius: 10px; margin: 0 30px;">
+              <h3 style="font-size: 20px; margin-bottom: 15px;">Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: App UI Design</li>
+                <li><strong>Client</strong>: Personal Project</li>
+                <li><strong>Project date</strong>: 26 Jan, 2026</li>
+                <li><strong>Project URL</strong>: <a href="https://www.behance.net/zzzzzzzs" target="_blank">Behance Link</a></li>
+              </ul>
+            </div>
+        
           </div>
+        
+        </div>
+        
+        </div>
 
         </div>
 
