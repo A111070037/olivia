@@ -38,55 +38,32 @@
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
+  <header id="header" class="header d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
-
+  
     <div class="profile-img">
       <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
     </div>
-
+  
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Alex Smith</h1>
+      <h1 class="sitename">Olivia Lee</h1>
     </a>
-
+  
     <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/o.l_0102/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.behance.net/zzzzzzzs" class="behance"><i class="bi bi-behance"></i></a>
     </div>
-
+  
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i>About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i>Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i>What can I do?</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
@@ -112,54 +89,71 @@
         <div class="row gy-4 align-items-start justify-content-center">
 
           <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center">
-            <div class="portfolio-details-slider swiper init-swiper" style="width: 100%; max-width: 320px; margin: 0;">
+            <div class="portfolio-details-slider swiper init-swiper" style="width: 100%; max-width: 320px; margin: 0; padding-bottom: 40px;">
               
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
-                  "autoplay": { "delay": 5000 },
+                  
                   "slidesPerView": "auto",
-                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                  "pagination": { 
+                    "el": ".swiper-pagination", 
+                    "type": "bullets", 
+                    "clickable": true 
+                  }
                 }
               </script>
         
               <div class="swiper-wrapper align-items-center">
                 <div class="swiper-slide text-center">
-                  <div style="overflow: hidden; border-radius: 10px; background: #000;">
+                  <div style="overflow: hidden; border-radius: 12px; background: #000;">
                     <video autoplay loop muted playsinline style="width: 100%; display: block; transform: scale(1.02); object-fit: cover;">
                       <source src="assets/video/黑色星期五.mp4" type="video/mp4">
-                      您的瀏覽器不支援影片播放。
                     </video>
                   </div>
+                  <p class="mt-2 text-muted" style="font-size: 12px;">影片 1：黑色星期五Ｘ聖誕節</p>
+                </div>
+        
+                <div class="swiper-slide text-center">
+                  <div style="overflow: hidden; border-radius: 12px; background: #000;">
+                    <video autoplay loop muted playsinline style="width: 100%; display: block; transform: scale(1.02); object-fit: cover;">
+                      <source src="assets/video/聖誕節.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <p class="mt-2 text-muted" style="font-size: 12px;">影片 2：聖誕節活動</p>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
+              
+              <div class="swiper-pagination" style="bottom: 0 !important; position: absolute;"></div>
             </div>
           </div>
         
           <div class="col-lg-7">
-    
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="200" style="padding: 0 30px 20px 30px;">
             </br>
           </br>
-        </br>
-              <h2 style="font-weight: 700; margin-bottom: 15px;">作品標題寫在這裡</h2>
+              <h2 style="font-weight: 700; margin-bottom: 15px;">聖誕與黑五廣告設計</h2>
               <p style="line-height: 1.8; color: #444;">
-                這裡可以填寫你的設計理念。例如：這是一個針對聖誕節活動設計的導購頁面，強調紅黑金的節慶視覺感，並優化了手機端的閱讀體驗。
+                作品包含兩款針對年度重要節慶開發的數位廣告，透過不同的視覺策略達成行銷目標：
+              </p>
+              <p style="line-height: 1.8; color: #444;">
+                <strong>● 黑色星期五 (Black Friday)：</strong> 採用經典的「黑、紅、金」高對比配色，營造出強烈的限時優惠感與節慶感，從視覺上第一時間抓住使用者目光，導引進入購物流程。
+              </p>
+              <p style="line-height: 1.8; color: #444;">
+                <strong>● 聖誕節轉盤活動：</strong> 突破傳統靜態Banner，引入互動式「轉盤」機制。透過遊戲化的設計增加與用戶的接觸時長，顯著提升了活動的參與率與趣味性，將導購過程轉化為愉快的節慶體驗。
               </p>
             </div>
         
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="300" style="padding: 20px 30px; background: #f8f9fa; border-radius: 10px; margin: 0 30px;">
-              <h3 style="font-size: 20px; margin-bottom: 15px;">Project information</h3>
+              <h3 style="font-size: 18px; margin-bottom: 15px; color: #333;">Project Information</h3>
               <ul>
-                <li><strong>Category</strong>: App UI Design</li>
-                <li><strong>Client</strong>: Personal Project</li>
+                <li><strong>Category</strong>: App UI/UX Design</li>
+                <li><strong>Client</strong>: Team Project</li>
                 <li><strong>Project date</strong>: 26 Jan, 2026</li>
-                <li><strong>Project URL</strong>: <a href="https://www.behance.net/zzzzzzzs" target="_blank">Behance Link</a></li>
+                <li><strong>Project URL</strong>: <a href="https://gallery.adneon.com.tw/demo/index.html?id=32385&token=a401a88a1b97&openExternalBrows%E2%80%A6" target="_blank">黑色星期五 (Black Friday)</a><a href="https://gallery.adneon.com.tw/demo/index.html?id=32385&token=a401a88a1b97&openExternalBrows%E2%80%A6" target="_blank">聖誕節</a>
               </ul>
             </div>
-        
           </div>
         
         </div>
