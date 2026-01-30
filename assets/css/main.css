@@ -1545,3 +1545,78 @@ section,
 .filter-books .folder-tab {
   background: #000000 !important;
 }
+/* 建立 16:9 的比例容器 */
+.ratio-16x9-container {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 強制維持 16:9 比例 */
+  overflow: hidden;
+  background-color: #f8f8f8; /* 載入前的底色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 確保圖片填滿容器且不變形 */
+.ratio-16x9-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 圖片會縮放以填滿容器，多餘部分會被裁剪，類似背景 cover 效果 */
+  object-position: center; /* 圖片對齊中心 */
+}
+/* 讓右側欄位在捲動時跟隨，增加閱讀便利性 */
+@media (min-width: 992px) {
+  .sticky-lg-top {
+    position: sticky;
+    top: 100px; /* 根據你的 Header 高度調整 */
+    z-index: 10;
+  }
+}
+
+/* 照片列表的間距與陰影 */
+.project-image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-image-item img:hover {
+  transform: translateY(-5px); /* 輕微浮起感 */
+}
+
+/* 標題區塊微調 */
+.portfolio-description h2 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.portfolio-description h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color); /* 使用你主題的強調色 */
+}
+/* 移除原本 template 對於左側容器可能存在的寬度限制 */
+.portfolio-details .col-lg-8 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 確保 1920x1080 完整呈現不被裁切 */
+}
+
+/* 讓右側資訊隨滾動固定 */
+@media (min-width: 992px) {
+  .sticky-lg-top {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 100px;
+      align-self: flex-start;
+  }
+}
+
+/* 調整間距讓版面不擁擠 */
+.portfolio-description h2 {
+  margin-top: 0;
+}
