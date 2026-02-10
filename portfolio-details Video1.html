@@ -189,6 +189,18 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
-
+  <style>
+    /* 針對分頁圓點進行精確定位 */
+    .portfolio-details-slider .swiper-pagination {
+      /* bottom 預設通常是 10px，增加數值會往上移 */
+      bottom: 65px !important; 
+    }
+  
+    /* 同時微調影片下方的文字間距，確保點點不會重疊到文字 */
+    .portfolio-details-slider .mt-2 {
+      margin-top: 8px !important;
+      margin-bottom: 20px !important; /* 增加底部外距，撐開文字與點點的距離 */
+    }
+  </style>
 </body>
 </html>
