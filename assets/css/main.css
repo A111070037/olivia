@@ -1620,3 +1620,15 @@ section,
 .portfolio-description h2 {
   margin-top: 0;
 }
+<style>
+  .portfolio-details-slider .swiper-pagination {
+    /* 數值越大，圓圈就會越往上移 */
+    bottom: 50px !important; 
+  }
+
+  /* 視情況微調影片下方的說明文字間距，避免與圓圈重疊 */
+  .portfolio-details-slider .mt-2 {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+</style>
