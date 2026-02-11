@@ -872,26 +872,26 @@ section,
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* 1. 先統一修改基礎定位 */
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: 50%;                /* 改為 50% */
   font-size: 26px;
-  top: calc(50% - 14px);
+  top: 50%;                 /* 改為 50% */
+  transform: translate(-50%, -50%); /* 關鍵：使用位移來達成絕對置中 */
   color: #fff;
   transition: 0.3s;
   line-height: 1.2;
 }
 
-.portfolio .portfolio-content .portfolio-info .preview-link:hover,
-.portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
+/* 2. 針對 details-link 的特殊調整（覆蓋下方原本的設定） */
 .portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
+  left: 50% !important;     /* 強制置中 */
   font-size: 34px;
   line-height: 0;
+  /* 確保 transform 依然存在 */
+  transform: translate(-50%, -50%) !important; 
 }
 
 .portfolio .portfolio-content:hover .portfolio-info {
