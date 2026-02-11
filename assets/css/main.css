@@ -1632,3 +1632,152 @@ section,
     margin-bottom: 5px !important;
   }
 </style>
+/* 讓關於我的標籤更有設計感 */
+.info-badge {
+  background: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.info-badge:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 讓作品集卡片看起來像懸浮的實體 */
+.folder-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none !important;
+}
+
+.folder-card:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
+/* 讓大標題更霸氣 */
+.section-title h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: rgba(0,0,0,0.3); /* 做出大背景字效果 */
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 60px;
+  height: 5px;
+  background: var(--accent-color);
+}
+<style>
+/* 履歷項目整體外觀 */
+.resume .resume-item {
+  padding: 0 0 30px 25px;
+  margin-top: -2px;
+  border-left: 2px solid var(--accent-color); /* 側邊線條改亮色 */
+  position: relative;
+}
+
+/* 1. 處理整體靠左感：給 Resume 容器增加左右內距 */
+#resume .container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* 2. 玻璃擬態卡片設計 */
+.resume-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px); /* 模糊背景，很有進階感 */
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 裝飾性背景數字 (例如 01, 02) - 這是變酷的關鍵 */
+.resume-card::after {
+  content: "CV";
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03); /* 非常淡的字，增加層次 */
+  z-index: 0;
+}
+
+.resume-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* 讓時間標籤動起來 */
+.resume-item h5 {
+  display: inline-block;
+  padding: 6px 20px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+/* 圓點進化成動態發光點 */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  left: -31px;
+  top: 8px;
+  background: var(--accent-color);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+/* 1. 隱藏 Education 和 Work Experience 內的詳細清單 */
+/* 使用 :not(:first-child) 或特定類別來避開 Introduce */
+.resume-item:not(.pb-0) ul, 
+.resume-item:not(.pb-0) h5 + p em {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 2. 當滑鼠移到這些項目上時顯示內容 */
+.resume-item:not(.pb-0):hover ul, 
+.resume-item:not(.pb-0):hover h5 + p em {
+  max-height: 600px; /* 確保足以容納世新大學長長的獲獎清單 */
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 3. 讓滑鼠移上去時，標題顏色變化作為提示 (排除 Introduce) */
+.resume-item:not(.pb-0):hover h4 {
+  color: #4e7dac;
+  transition: 0.3s;
+}
+
+/* 4. 游標樣式提示 */
+.resume-item:not(.pb-0) {
+  cursor: pointer;
+}
