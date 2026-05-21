@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -75,14 +75,12 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="flashlight-target">
+
+      <div id="hero-canvas"></div>
     
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Hi,</h2>
-        <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Designer</span></p>
-      </div>
-    </section>
-
+        </div>
+    
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
@@ -99,8 +97,8 @@
         </div>
       </div><div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 d-flex align-items-center justify-content-center">
+            <div id="model-viewer" style="width: 100%; height: 450px; cursor: grab;"></div>
           </div>
           <div class="col-lg-8 content" data-aos="fade-left">
           </br>
@@ -318,7 +316,7 @@
 
         <div class="resume-item">
           <h4>騰學廣告科技股份有限公司</h4>
-          <h5>2025.10 - Present</h5>
+          <h5>2025.10 - 2026.03</h5>
           <p><em>設計實習生</em></p>
           <ul>
             <li>廣告素材製作</li>
@@ -326,6 +324,17 @@
             <li>社群圖文製作</li>
             <li>網站內容編輯</li>
             <li>招商簡報製作</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <h4>訊連科技股份有限公司</h4>
+          <h5>2026.03 - Present</h5>
+          <p><em>設計實習生</em></p>
+          <ul>
+            <li>UI素材製作</li>
+            <li>App Store Preview Images製作</li>
+            <li>Google、Apple廣告製作</li>
+            <li>推播通知push圖製作</li>
           </ul>
         </div>
       </div>
@@ -676,8 +685,12 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+  <script src="assets/js/hero-p5.js"></script>
+
   <script src="assets/js/main.js"></script>
+
 
 </body>
 
