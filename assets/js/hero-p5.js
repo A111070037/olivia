@@ -12,7 +12,7 @@ new p5(function (p) {
 
   // ── 設定區（可自行調整）────────────────────────────────
   const TEXT_LINES   = ['Olivia Lee', 'Designer & Developer'];  // 要顯示的文字
-  const FONT_SIZE    = [72, 36];          // 每行字體大小（px）
+  const FONT_SIZE    = [100, 50];          // 每行字體大小（px）
   const PARTICLE_GAP = 4;                 // 粒子取樣間距，越小粒子越多越密
   const PARTICLE_R   = 2;                 // 粒子半徑
   const MOUSE_RADIUS = 100;              // 滑鼠排斥半徑
