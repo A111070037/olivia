@@ -38,37 +38,40 @@
 
 <body class="index-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
+  <header id="header" class="header dark-background">
+
+    <!-- 漢堡按鈕（手機用） -->
     <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+  
+    <div class="header-inner d-flex align-items-center justify-content-between">
+  
+      <!-- 左側：Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Olivia Lee</h1>
+      </a>
+  
+      <!-- 右側：導覽選單 + 社群 -->
+      <div class="d-flex align-items-center gap-3">
+  
+        <nav id="navmenu" class="navmenu">
+          <ul class="d-flex align-items-center mb-0">
+            <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+            <li><a href="#about"><i class="bi bi-person navicon"></i>About</a></li>
+            <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+            <li><a href="#portfolio"><i class="bi bi-images navicon"></i>Portfolio</a></li>
+            <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i>What can I do?</a></li>
+            <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+          </ul>
+        </nav>
+  
+        <div class="social-links d-flex align-items-center">
+          <a href="https://www.behance.net/zzzzzzzs" class="Behance"><i class="bi bi-behance"></i></a>
+          <a href="https://www.instagram.com/szzzzz.0907?igsh=MXI5MXhvZm92bTFhYQ%3D%3D&utm_source=qr" class="instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+  
+      </div>
     </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Olivia Lee</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://www.behance.net/zzzzzzzs" class="Behance"><i class="bi bi-behance"></i></a>
-      <a href="https://www.instagram.com/szzzzz.0907?igsh=MXI5MXhvZm92bTFhYQ%3D%3D&utm_source=qr" class="instagram"><i class="bi bi-instagram"></i></a>
-      
-      
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> What can I do?</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
+  
   </header>
 
   <main class="main">
@@ -98,7 +101,7 @@
       </div><div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4 d-flex align-items-center justify-content-center">
-            <div id="model-viewer" style="width: 100%; height: 450px; cursor: grab;"></div>
+            <img src="assets/img/logo.png" alt="Olivia Lee" class="img-fluid">
           </div>
           <div class="col-lg-8 content" data-aos="fade-left">
           </br>
@@ -258,9 +261,9 @@
     <!-- Resume Section -->
     <section id="resume" class="resume section">
 
-      <div class="section-title" data-aos="fade-up" style="padding-left: 15px; padding-top: 0;">
+      <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p style="margin-left: 0;">來更認識我吧！</p>
+        <p>我的學習及工作經驗</p>
       </div>
 
   <div class="container">
@@ -403,6 +406,21 @@
                     <p>世新大學模擬提案</p>
                
                     <a href="portfolio-detailsUIUX1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="folder-card">
+                <div class="folder-tab"><span>UI/UX</span></div>
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/portfolio/Frame 3.png" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>App Store Images設計</h4>
+                    <p>Cyberlink 相片大師 專案</p>
+               
+                    <a href="portfolio-detailsUIUX4 copy.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                   </div>
                 </div>
               </div>
@@ -687,9 +705,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 
-  <script src="assets/js/hero-p5.js"></script>
-
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/hero-p5.js"></script>
+<script src="assets/js/main.js"></script>
 
 
 </body>
